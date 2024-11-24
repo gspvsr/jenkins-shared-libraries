@@ -4,5 +4,5 @@ def call(String Project, String ImageTag, String dockerHubUser) {
         sh "echo ${dockerHubPass} | docker login -u ${dockerHubUser} --password-stdin"
     }
     // Push the Docker image
-    sh "sudo docker push ${dockerHubUser}/${Project}:${ImageTag}"
+    sh "docker push ${dockerHubUser}/${Project}:${ImageTag}"
 }
